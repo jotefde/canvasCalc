@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kalkulator</title>
+	<script src="main.js"></script>
+	<style>
+	html, body {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
+	#canvas {
+		border: 1px solid black;
+		box-sizing: border-box;
+		position: absolute;
+			top: 50%;
+			left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	</style>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400">Update ur browser!</canvas>
+
+<script>
+(function() {
+	let canvas = document.querySelector("#canvas");
+	if(!canvas.getContext)
+	{
+		console.error("canvas.getContext is not exists!");
+		return false;
+	}
+	let ctx = canvas.getContext("2d");
+	let app = new App(ctx, canvas.width, canvas.height);
+	app.Start();
+})();
+</script>
+
+</body>
+</html>
